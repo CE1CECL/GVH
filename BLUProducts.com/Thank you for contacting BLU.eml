@@ -1,0 +1,47 @@
+MIME-Version: 1.0
+Date: Sat, 30 Jul 2022 20:56:12 -0400
+References: <Sgjh5000000000000000000000000000000000000000000000RBBA9G00mZcuBO38QVeGYBfW6kpjNA@sfdc.net>
+	<A15786AA-0631-4B44-B2CA-83DCC8422F18@gmail.com>
+	<GfVOV000000000000000000000000000000000000000000000RBMDUH00e9BC1Ur3SNW6KS32wc85GQ@sfdc.net>
+In-Reply-To: <GfVOV000000000000000000000000000000000000000000000RBMDUH00e9BC1Ur3SNW6KS32wc85GQ@sfdc.net>
+Message-ID: <CAOFL_rTyDVB76aQspLtMpeMuKMLiSzt7dMQ7R9r5rYF9JnCefg@mail.gmail.com>
+Subject: Re: Thank you for contacting BLU Products.
+From: ChrisEric1 CECL <christopherericlentocha@gmail.com>
+To: "Customer Service Service@BLUproducts.com" <service@bluproducts.com>
+Content-Type: multipart/alternative; boundary="0000000000008362c305e50f59dc"
+
+--0000000000008362c305e50f59dc
+Content-Type: text/plain; charset="UTF-8"
+
+Hi there again,
+there seems to be a u-boot on my phone and it's also a GNU license, do you
+provide buildable sources? The kernel source in FTP doesn't seem to be a
+kernel, in fact, looks to be ripped off the android build source's wrong
+folder. I did see at least 2 devices that you do provide buildable sources
+for, that are mostly if not complete android AOSP build system. If you can,
+send me build instructions, open source toolchains if used, and let me know
+what was proprietary and removed from source if as needed, so I can fully
+build this thing. Just remember not to remove too much, as that as far as I
+know is a violation of GNU, but might not be to others like Apache.
+Any help would be appreciated.
+Thanks!
+Christopher Lentocha
+
+--0000000000008362c305e50f59dc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hi there again,</div><div>there seems to be a u-boot =
+on my phone and it&#39;s also a GNU license, do you provide buildable sourc=
+es? The kernel source in FTP doesn&#39;t seem to be a kernel, in fact, look=
+s to be ripped off the android build source&#39;s wrong folder. I did see a=
+t least 2 devices that you do provide buildable sources for, that are mostl=
+y if not complete android AOSP build system. If you can, send me build inst=
+ructions, open source toolchains if used, and let me know what was propriet=
+ary and removed from source if as needed, so I can fully build this thing. =
+Just remember not to remove too much, as that as far as I know is a violati=
+on of GNU, but might not be to others like Apache. <br></div><div>Any help =
+would be appreciated.</div><div>Thanks!<br></div><div>Christopher Lentocha<=
+br></div></div>
+
+--0000000000008362c305e50f59dc--

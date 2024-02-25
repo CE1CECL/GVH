@@ -1,0 +1,893 @@
+Delivered-To: christopherericlentocha@gmail.com
+Received: by 2002:a05:6f02:10c:b0:56:f957:6cfa with SMTP id 12csp2659709rcm;
+        Tue, 19 Sep 2023 06:48:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFNbS/scNuIx2EY1VIwT8F9g2s5Uct9jvR4mt2QrOfYo0IjyBhFTsyiL8W6qqYM3Yor6uXD
+X-Received: by 2002:a17:902:e88a:b0:1b2:4852:9a5f with SMTP id w10-20020a170902e88a00b001b248529a5fmr10927660plg.54.1695131331865;
+        Tue, 19 Sep 2023 06:48:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695131331; cv=none;
+        d=google.com; s=arc-20160816;
+        b=e0CalXlLygzkLaiQZ3LZlDbLCGCM1Q48gDY/12GrKvcYd8682xKVwY3M8n5MpsCcI4
+         O74A22nhQ377geYB9QU0XXTmVbr+uCItlY70UTRymstcz4PaaQkATC7io+uaq0BORCM5
+         0zOcPbMq+jc13qNpvQ/dYjL5do5BfQOSz4GSyIsmn7cGQQwqJ/Xk6SqyGD4y4ZbfVopk
+         NDszOYXNLwGP1R5Y+m1rKko224ydsBxZEQRXuGbqaE5tB7UZD+4xI9FHPx6jyghSNY4o
+         jb72xdopvd6pAmEfG9BH82tOS8ezI1hMVo7FbQIcXIHDzmXylsioWdtL8hSrBahOdl6y
+         zx4g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:references:in-reply-to:message-id:to:from:date;
+        bh=NyXhvADMXhtZ89nGIHAu/YX+58DkZ2FBPxV8qpsO34Q=;
+        fh=4wwjWe46d9dR0JfgV1RJAJ91vXe/Cmt2OpeLbgJoKTo=;
+        b=szKF+59+VMpXdBGQPpE1EZCTjrrPLP09/5YKts5AW/ecAN5+R7ygDPMRbDsOGs7kEH
+         HHnNQZzy8xv4tFvfthFkOI9WN+k6ny+n8vrJ9iVjs97n3q8xtMrQ+Clea3Q6xf3kSbiB
+         vE90L3tRdDdiApeHPhtFyp3qdYyYNDhqsJHmuR4Rqy0RGzHee7LpAXdROoCIb9oQ3/Cv
+         x10xRe+rVEoY89tShXAO5bzwnLs3v7cs3zsqXJLhS2am+OzHqgZLZseO41XG0ze9iHYI
+         VF3zqDX7ywUQDsuBpOYghlUp1w5SecM3vdA7seEJHOH+6aRqbda9weLu39E2PrQmdVwR
+         Th3g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com designates 13.110.242.206 as permitted sender) smtp.mailfrom="service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com";
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=bluproducts.com
+Return-Path: <service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com>
+Received: from smtp15-ia6-sp3.mta.salesforce.com (smtp15-ia6-sp3.mta.salesforce.com. [13.110.242.206])
+        by mx.google.com with ESMTPS id l20-20020a170903005400b001c4352c2c9esi7198434pla.160.2023.09.19.06.48.51
+        for <christopherericlentocha@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 19 Sep 2023 06:48:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com designates 13.110.242.206 as permitted sender) client-ip=13.110.242.206;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com designates 13.110.242.206 as permitted sender) smtp.mailfrom="service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com";
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=bluproducts.com
+Return-Path: <service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com>
+Authentication-Results:  mx4-ia6-sp3.mta.salesforce.com x-tls.subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia6;2:ia6-sp3;3:na236;4:prod/CN=na236-app2-38-ia6.ops.sfdc.net"; auth=pass (cipher=ECDHE-RSA-AES256-GCM-SHA384)
+Received: from [10.173.181.36] ([10.173.181.36:54636] helo=na236-app2-38-ia6.ops.sfdc.net)
+	by mx4-ia6-sp3.mta.salesforce.com (envelope-from <service=bluproducts.com__1e1w4dewonasqppk.2nv0tnypl3ce9v5t@3ddbyf7bqwxnmkki.5swqy.5-bsxgeao.na236.bnc.salesforce.com>)
+	(ecelerity 4.4.0.19839 r(msys-ecelerity:tags/4.4.0.0^0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384
+	subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia6;2:ia6-sp3;3:na236;4:prod/CN=na236-app2-38-ia6.ops.sfdc.net") 
+	id B2/7B-05075-FB6A9056; Tue, 19 Sep 2023 13:48:47 +0000
+Date: Tue, 19 Sep 2023 13:48:47 +0000 (GMT)
+From: "Customer Service Service@BLUproducts.com" <service@bluproducts.com>
+To: "christopherericlentocha@gmail.com" <christopherericlentocha@gmail.com>
+Message-ID: <jevdM000000000000000000000000000000000000000000000S18JPA00YeOt-K58R4WFIQaj6pmMGA@sfdc.net>
+In-Reply-To: <CAOFL_rSzp07nnh-FN-3W5dF-t-ZJTY0dQogdOv3=NnHxCJWOdg@mail.gmail.com>
+References: <Foo_2000000000000000000000000000000000000000000000S0XIUS00YiRq9oJrRTWthjaXmowIYQ@sfdc.net>
+ <CAOFL_rSwhJ9x0ssd4EdKDUYQOPWtQpQSPm4G+mQwb=H_zkCOqg@mail.gmail.com>
+ <1PSBQ000000000000000000000000000000000000000000000S0ZQJM00DdZuozLBSjSVJbnwJUQpxA@sfdc.net>
+ <CAOFL_rSzp07nnh-FN-3W5dF-t-ZJTY0dQogdOv3=NnHxCJWOdg@mail.gmail.com>
+Subject: Thank you for contacting BLU Products.
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1495_696519388.1695131327010"
+X-SFDC-LK: 00D50000000BSXg
+X-SFDC-User: 0051T00000BOfXm
+X-Sender: postmaster@salesforce.com
+X-mail_abuse_inquiries: http://www.salesforce.com/company/abuse.jsp
+X-SFDC-TLS-NoRelay: 1
+X-SFDC-Binding: 1WrIRBV94myi25uB
+X-SFDC-EmailCategory: quickActionEmail
+X-SFDC-EntityId: 500Hs00001wH0Xj
+X-SFDC-Interface: internal
+
+------=_Part_1495_696519388.1695131327010
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+
+Thank you for contacting BLU Products. We are happy to help you!
+
+
+At this time, we do not provide ROMs, software, or firmware for any of our devices. If you need software assistance for your device, we recommend filing a claim. Our Certified BLU Technicians would be more than happy to provide you with a repair. Please be advised, your device will need to be sent to our service center in order to proceed. We apologize for the inconvenience, but this is our policy.
+
+
+Should you have any additional questions please contact us at 1-877-602-8762 (Monday-Friday 9:15am-5:45pm EST).
+
+
+Thank you for choosing BLU!
+
+
+Best Regards,
+
+www.bluproducts.com
+
+BLU Products Social
+
+Facebook | www.facebook.com/Blu.Products
+
+Twitter | www.twitter.com/BLU_Products
+
+YouTube | www.youtube.com/ BLUProductsGlobal
+
+Instagram | @BLU_Products
+
+
+
+
+
+--------------- Original Message ---------------
+From: ChrisEric1 CECL [christopherericlentocha@gmail.com]
+Sent: 9/18/2023 1:08 PM
+To: service@bluproducts.com
+Subject: Re: Thank you for contacting BLU!
+Hello, I contacted Tracfone, and they told me that they don't manage any of the software: the chat logs are here: https://drive.google.com/drive/folders/1-jAKwiWsa7ostnmuXzKT8r5UK-1CE6mQ?usp=sharing
+Either way, the C0070WW is NOT a Tracfone device, but a unlocked device bought from you on Walmart. Both the C0070WW and the B131DL came from Walmart, and on that google drive, look at the dates, as I have been asking for kernel source for over a year now (for the C0070WW anyways). Please respond with proper sources for GPL or I will have to file a GPL violation for my first time ever, which I don't want to do. Thanks, Christopher Lentocha.
+On Thu, Sep 14, 2023 at 3:38?PM Customer Service Service@BLUproducts.com <service@bluproducts.com> wrote:
+
+Hello,
+
+
+Thank you for contacting BLU Products. We are happy to help you!
+
+
+We sincerely apologize for the inconveniences this may have caused. Because TracFone has a very specific software, we recommend reaching out to them for assistance. Unfortunately, any and all requests for the BLU TracFone devices must be processed through TracFone directly. Please find TracFone's customer service phone number below:
+
+1(800) 867-7183.
+
+
+Should you have any additional questions please contact us at 1-877-602-8762 (Monday-Friday 9:15am-5:45pm EST).
+
+
+Thank you for choosing BLU!
+
+
+Best Regards,
+
+www.bluproducts.com
+
+BLU Products Social
+
+Facebook | www.facebook.com/Blu.Products
+
+Twitter | www.twitter.com/BLU_Products
+
+YouTube | www.youtube.com/ BLUProductsGlobal
+
+
+Instagram | @BLU_Products
+
+
+
+
+
+--------------- Original Message ---------------
+From: ChrisEric1 CECL [christopherericlentocha@gmail.com]
+Sent: 9/13/2023 12:24 PM
+To: service@bluproducts.com
+Subject: Re: Thank you for contacting BLU Products.
+I don't know If I made it clear in the little box that I used but I was asking about GPL source code that is required by the license to give out, for both the B131DL & the C0070WW smartphones. I was (only for the C0070WW) given a FTP server that no longer works, and half the devices were there, and my C0070WW source was never uploaded fully, even though you said you did. I just got the B131DL Tracfone phone.
+Thanks,
+Christopher Lentocha
+On Wed, Sep 13, 2023 at 10:56?AM Customer Service Service@BLUproducts.com <service@bluproducts.com> wrote:
+
+Hello,
+
+
+Thank you for contacting BLU Products. We are happy to help you!
+
+
+At this time, we do not provide ROMs, software, or firmware for any of our devices. If you need software assistance for your device, we recommend filing a claim. Our Certified BLU Technicians would be more than happy to provide you with a repair. Please be advised, your device will need to be sent to our service center in order to proceed.
+
+
+Should you have any additional questions please contact us at 1-877-602-8762 (Monday-Friday 9:15am-5:45pm EST).
+
+
+Thank you for choosing BLU!
+
+
+Best Regards,
+
+www.bluproducts.com
+
+BLU Products Social
+
+Facebook | www.facebook.com/Blu.Products
+
+Twitter | www.twitter.com/BLU_Products
+
+YouTube | www.youtube.com/ BLUProductsGlobal
+
+Instagram | @BLU_Products
+
+
+
+This email has been scanned for spam and viruses by Proofpoint Essentials. Click here to report this email as spam.
+
+
+This email has been scanned for spam and viruses by Proofpoint Essentials. Click here to report this email as spam.
+------=_Part_1495_696519388.1695131327010
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">p{margin-top:0px; margin-bottom:0px;}
+</style>
+<div class="setupTab" style=" background-color:#FFFFFF; bEditID:b1st1; bLabel:body;">
+<center>
+<table cellpadding="0" cellspacing="0" height="450" id="topTable" width="500">
+	<tbody>
+		<tr valign="top">
+			<td style=" background-color:#FFFFFF; bEditID:r1st1; bLabel:header; vertical-align:middle; height:100; text-align:center;"><img beditid="r1sp1" blabel="headerImage" border="0" id="r1sp1" src="https://bluproducts.my.salesforce.com/servlet/servlet.ImageServer?id=0151T0000040Gr7&oid=00D50000000BSXg" /></td>
+		</tr>
+		<tr style=" display:none;" valign="top">
+			<td style="background-color: rgb(255, 255, 255); height: 0px; line-height: 0px;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td height="300" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" styleinsert="1">
+			<table border="0" cellpadding="5" cellspacing="5" height="400" width="550">
+				<tbody>
+					<tr height="400" valign="top">
+						<td aeditid="c1r1" contenteditable="true" locked="0" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" teditid="c1r1"><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Revision>0</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Pages>1</o:Pages>
+  <o:Words>71</o:Words>
+  <o:Characters>409</o:Characters>
+  <o:Company>Ventas Consulting</o:Company>
+  <o:Lines>3</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>479</o:CharactersWithSpaces>
+  <o:Version>14.0</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>JA</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="276">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--><!--StartFragment-->
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#1F497D;
+mso-no-proof:yes">Hello,<o:p></o:p></span></p>
+
+						<p class="MsoNormal" style="text-indent:.5in"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;
+color:#1F497D;mso-no-proof:yes">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#1F497D;
+mso-no-proof:yes">Thank you for contacting </span><span style="font-family:
+&quot;Cambria&quot;,&quot;serif&quot;;mso-ascii-theme-font:major-latin;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+major-latin;color:#1F497D;mso-no-proof:yes"><a href="http://bluproducts.com/"><span style="color:blue">BLU Products</span></a>. We</span><span style="font-family:
+&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:
+minor-fareast;color:#1F497D;mso-no-proof:yes"> are happy to help you!<o:p></o:p></span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-ascii-theme-font:
+major-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:major-latin;color:#1F497D;mso-themecolor:
+text2;mso-no-proof:yes">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,serif;color:#1F497D;
+background:white">At this time, we do not provide ROMs, software, or firmware for any of our devices. If you need software assistance for your device, we recommend filing a claim. Our Certified BLU Technicians would be more than happy to provide you with a repair. Please be advised, your device will need to be sent to our service center in order to proceed. We apologize for the inconvenience, but this is our policy.&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-ascii-theme-font:
+major-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:major-latin;color:#1F497D;mso-themecolor:
+text2;mso-no-proof:yes">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#1F497D;
+mso-no-proof:yes">Should you have any additional questions please contact us at 1-877-602-8762 (</span><span style="color: rgb(31, 73, 125); font-family: Cambria, serif; background-color: rgb(255, 255, 255);">Monday-Friday 9:15am-5:45pm EST</span><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#1F497D;
+mso-no-proof:yes">).<o:p></o:p></span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#1F497D;
+mso-no-proof:yes">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#1F497D;
+mso-no-proof:yes">Thank you for choosing BLU!<o:p></o:p></span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-ascii-theme-font:
+major-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:major-latin;mso-no-proof:yes">&nbsp;</span></p>
+
+						<p class="MsoNormal"><b><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-ascii-theme-font:
+major-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:major-latin;color:#333333;mso-no-proof:yes">Best Regards,<o:p></o:p></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;
+mso-bidi-font-family:Arial;color:#99CC00;mso-no-proof:yes"><a href="http://www.bluproducts.com/"><span style="color:blue">www.bluproducts.com</span></a><o:p></o:p></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;
+color:#262626;mso-no-proof:yes">BLU Products Social <o:p></o:p></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;
+color:#333333;mso-no-proof:yes">Facebook </span></b><b><span style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-fareast-theme-font:minor-fareast;color:#00B0F0;mso-no-proof:yes">|</span></b><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#333333;
+mso-no-proof:yes"> <a href="www.facebook.com/Blu.Products"><span style="color:blue">www.facebook.com/Blu.Products</span></a><o:p></o:p></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;
+color:#333333;mso-no-proof:yes">Twitter </span></b><b><span style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-fareast-theme-font:minor-fareast;color:#00B0F0;mso-no-proof:yes">| </span></b><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#333333;
+mso-no-proof:yes"><a href="www.twitter.com/BLU_Products"><span style="color:blue">www.twitter.com/BLU_Products</span></a><o:p></o:p></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;
+color:#333333;mso-no-proof:yes">YouTube </span></b><b><span style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-fareast-theme-font:minor-fareast;color:#00B0F0;mso-no-proof:yes">|</span></b><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;color:#333333;
+mso-no-proof:yes"> <a href="www.youtube.com/%20BLUProductsGlobal"><span style="color:blue">www.youtube.com/</span><span style="font-size:11.0pt;
+color:blue;font-weight:normal"> </span><span style="color:blue">BLUProductsGlobal</span></a><o:p></o:p></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;color:#333333;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA;mso-no-proof:yes">Instagram</span><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;color:#00B0F0;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA;mso-no-proof:yes"> |</span><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;color:#333333;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA;mso-no-proof:yes"> </span><u><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;color:blue;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA;mso-no-proof:yes">@BLU_Products</span></u></b></p>
+
+						<p class="MsoNormal"><b><u><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;color:blue;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA;mso-no-proof:yes"><img align="left" alt="" border="0" src="https://c.na3.content.force.com/servlet/servlet.ImageServer?id=01550000001LNHu&oid=00D50000000BSXg" /></span></u></b></p>
+						<!--EndFragment--></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td style="background-color: rgb(255, 255, 255); height: 1px; line-height: 1px;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td style=" background-color:#FFFFFF; bEditID:r5st1; bLabel:footer; vertical-align:top; height:100; text-align:left;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td style="background-color: rgb(255, 255, 255); height: 1px; line-height: 1px;">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+</div>
+<br clear="none" />
+<br clear="none" />
+<br clear="none" />
+--------------- Original Message ---------------<br clear="none" />
+<b>From:</b> ChrisEric1 CECL [christopherericlentocha@gmail.com]<br clear="none" />
+<b>Sent:</b> 9/18/2023 1:08 PM<br clear="none" />
+<b>To:</b> service@bluproducts.com<br clear="none" />
+<b>Subject:</b> Re: Thank you for contacting BLU!<br clear="none" />
+&nbsp;
+<div dir="ltr">
+<div>Hello, I contacted Tracfone, and they told me that they don&#39;t manage any of the software: the chat logs are here: <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__drive.google.com_drive_folders_1-2DjAKwiWsa7ostnmuXzKT8r5UK-2D1CE6mQ-3Fusp-3Dsharing&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=y-hpmtEkIa7WaRLzcYdmZWC_Olt0RF0WtX4XBq89QdM&e=" shape="rect" target="_blank">https://drive.google.com/drive/folders/1-jAKwiWsa7ostnmuXzKT8r5UK-1CE6mQ?usp=sharing</a></div>
+
+<div>&nbsp;</div>
+
+<div>Either way, the C0070WW is NOT a Tracfone device, but a unlocked device bought from you on Walmart. Both the C0070WW and the B131DL came from Walmart, and on that google drive, look at the dates, as I have been asking for kernel source for over a year now (for the C0070WW anyways). Please respond with proper sources for GPL or I will have to file a GPL violation for my first time ever, which I don&#39;t want to do. Thanks, Christopher Lentocha.</div>
+</div>
+&nbsp;
+
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Thu, Sep 14, 2023 at 3:38?PM Customer Service Service@BLUproducts.com &lt;<a href="mailto:service@bluproducts.com" shape="rect" target="_blank">service@bluproducts.com</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div>
+<div style="background-color:rgb(255,255,255)">
+<center>
+<table cellpadding="0" cellspacing="0" height="450" id="m_5168684995792968621topTable" width="500">
+	<tbody>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);vertical-align:middle;text-align:center"><img border="0" id="m_5168684995792968621r1sp1" src="https://bluproducts.my.salesforce.com/servlet/servlet.ImageServer?id=0151T0000040Gr7&oid=00D50000000BSXg" /></td>
+		</tr>
+		<tr style="display:none" valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);height:0px;line-height:0px">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" height="300" rowspan="1" style="background-color:rgb(255,255,255);color:rgb(0,0,0);font-size:12pt;font-family:arial">
+			<table border="0" cellpadding="5" cellspacing="5" height="400" width="550">
+				<tbody>
+					<tr height="400" valign="top">
+						<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255)">
+						<p class="MsoNormal" style="color:rgb(0,0,0);font-family:arial;font-size:12pt"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">Hello,</span></p>
+
+						<p class="MsoNormal" style="color:rgb(0,0,0);font-family:arial;font-size:12pt;text-indent:0.5in"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal" style="color:rgb(0,0,0);font-family:arial;font-size:12pt"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">Thank you for contacting&nbsp;</span><span style="font-family:Cambria,serif;color:rgb(31,73,125)"><span style="color:blue"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__bluproducts.com_&d=DwMFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=ijVF10yIS0HQrN32xJIITUpH4itrRSceGA9YV1H9kiw&e=" shape="rect" target="_blank">BLU Products</a></span>. We</span><span style="font-family:Cambria,serif;color:rgb(31,73,125)">&nbsp;are happy to help you!</span></p>
+
+						<p class="MsoNormal" style="color:rgb(0,0,0);font-family:arial;font-size:12pt"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal"><font color="#1f497d" face="Cambria, serif"><font color="#000000" face="Calibri" size="3">We sincerely apologize for the inconveniences this may have caused. Because </font><font size="3">TracFone</font><font color="#000000" face="Calibri" size="3">&nbsp;has a very specific software, we recommend reaching out to them for assistance.&nbsp;Unfortunately, any and all&nbsp;requests for the BLU TracFone devices must be processed through TracFone directly. Please find TracFone&#39;s customer service phone number below:</font></font></p>
+
+						<p class="MsoNormal" style="color:rgb(0,0,0);font-family:arial;font-size:12pt"><font color="#1f497d" face="Cambria, serif">1(800) 867-7183.</font></p>
+
+						<p class="MsoNormal" style="color:rgb(0,0,0);font-family:arial;font-size:12pt">&nbsp;</p>
+
+						<div style="color:rgb(0,0,0);font-family:arial;font-size:12pt">
+						<p class="MsoNormal" style="font-size:12pt"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">Should you have any additional questions please contact us at 1-877-602-8762 (</span><span style="color:rgb(31,73,125);font-family:Cambria,serif;background-color:rgb(255,255,255)">Monday-Friday 9:15am-5:45pm EST</span><span style="font-family:Cambria,serif;color:rgb(31,73,125)">).</span></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><span style="font-family:Cambria,serif;color:rgb(31,73,125)">Thank you for choosing BLU!</span></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><span style="font-family:Cambria,serif">&nbsp;</span></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-family:Cambria,serif;color:rgb(51,51,51)">Best Regards,</span></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-size:9pt;font-family:Cambria,serif;color:rgb(153,204,0)"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.bluproducts.com&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=Sx-TW7qBTOXH0KoNJ88koYFKnlmOnXYqS01UxprT0u8&e=" shape="rect" target="_blank">www.bluproducts.com</a></span></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(38,38,38)">BLU Products Social</span></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">Facebook&nbsp;</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(0,176,240)">|</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">&nbsp;<a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.facebook.com_Blu.Products&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=gat2T1LjXh7EEdiJGGhZcHSwx32dWn6UYg9kdE5AeW4&e=" shape="rect" target="_blank">www.facebook.com/Blu.Products</a></span></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">Twitter&nbsp;</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(0,176,240)">|&nbsp;</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.twitter.com_BLU-5FProducts&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=Z_Vd2T4VBTm7vynD2P_dPIl50Yha9JJSV-I4jhiZgks&e=" shape="rect" target="_blank">www.twitter.com/BLU_Products</a></span></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">YouTube&nbsp;</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(0,176,240)">|</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">&nbsp;<a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.youtube.com_&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=6e9YPekG1rRFNfuaBvKMD0hBW_td6rS-Jwf4ZmzNC7w&e=" shape="rect" target="_blank">www.youtube.com/</a></span><span style="font-size:11pt;color:blue;font-weight:normal">&nbsp;</span><span style="color:blue">BLUProductsGlobal</span></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt">&nbsp;</p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">Instagram</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(0,176,240)">&nbsp;|</span></b><b><span style="font-size:10pt;font-family:Cambria,serif;color:rgb(51,51,51)">&nbsp;</span></b><b><u><span style="font-size:10pt;font-family:Cambria,serif;color:blue">@BLU_Products</span></u></b></p>
+
+						<p class="MsoNormal" style="font-size:12pt"><b><u><span style="font-size:10pt;font-family:Cambria,serif;color:blue"><img align="left" alt="" border="0" src="https://c.na3.content.force.com/servlet/servlet.ImageServer?id=01550000001LNHu&oid=00D50000000BSXg" /></span></u></b></p>
+
+						<div>&nbsp;</div>
+						</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);height:1px;line-height:1px">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);vertical-align:top;text-align:left">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);height:1px;line-height:1px">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+</div>
+<br clear="none" />
+<br clear="none" />
+<br clear="none" />
+--------------- Original Message ---------------<br clear="none" />
+<b>From:</b> ChrisEric1 CECL [<a href="mailto:christopherericlentocha@gmail.com" shape="rect" target="_blank">christopherericlentocha@gmail.com</a>]<br clear="none" />
+<b>Sent:</b> 9/13/2023 12:24 PM<br clear="none" />
+<b>To:</b> <a href="mailto:service@bluproducts.com" shape="rect" target="_blank">service@bluproducts.com</a><br clear="none" />
+<b>Subject:</b> Re: Thank you for contacting BLU Products.<br clear="none" />
+&nbsp;
+<div dir="ltr">
+<div>I don&#39;t know If I made it clear in the little box that I used but I was asking about GPL source code that is required by the license to give out, for both the B131DL &amp; the C0070WW smartphones. I was (only for the C0070WW) given a FTP server that no longer works, and half the devices were there, and my C0070WW source was never uploaded fully, even though you said you did. I just got the B131DL Tracfone phone.</div>
+
+<div>&nbsp;</div>
+
+<div>Thanks,</div>
+
+<div>Christopher Lentocha</div>
+&nbsp;
+
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Wed, Sep 13, 2023 at 10:56?AM Customer Service Service@BLUproducts.com &lt;<a href="mailto:service@bluproducts.com" shape="rect" target="_blank">service@bluproducts.com</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div>
+<div style="background-color:rgb(255,255,255)">
+<center>
+<table cellpadding="0" cellspacing="0" height="450" id="m_5168684995792968621m_3289479314250653690topTable" width="500">
+	<tbody>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);vertical-align:middle;text-align:center"><img border="0" id="m_5168684995792968621m_3289479314250653690r1sp1" src="https://bluproducts.my.salesforce.com/servlet/servlet.ImageServer?id=0151T0000040Gr7&oid=00D50000000BSXg" /></td>
+		</tr>
+		<tr style="display:none" valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);height:0px;line-height:0px">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" height="300" rowspan="1" style="background-color:rgb(255,255,255);color:rgb(0,0,0);font-size:12pt;font-family:arial">
+			<table border="0" cellpadding="5" cellspacing="5" height="400" width="550">
+				<tbody>
+					<tr height="400" valign="top">
+						<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);color:rgb(0,0,0);font-size:12pt;font-family:arial">
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">Hello,</span></p>
+
+						<p class="MsoNormal" style="text-indent:0.5in"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">Thank you for contacting </span><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__bluproducts.com_&d=DwMFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=2Ec-diefN860npJQheOK8gaq2odhG4OJfUSfwYCgmA4f0SEmNsybkmiy4Gwc3AZu&s=8NDV0EXZecK-ctKqrSGQOFeav_9jFWNNgGMJINXbDcE&e=" shape="rect" target="_blank"><span style="color:blue">BLU Products</span></a>. We</span><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)"> are happy to help you!</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,serif;color:rgb(31,73,125);background:white">At this time, we do not provide ROMs, software, or firmware for any of our devices. If you need software assistance for your device, we recommend filing a claim. Our Certified BLU Technicians would be more than happy to provide you with a repair. Please be advised, your device will need to be sent to our service center in order to proceed.</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">Should you have any additional questions please contact us at 1-877-602-8762 (</span><span style="color:rgb(31,73,125);font-family:Cambria,serif;background-color:rgb(255,255,255)">Monday-Friday 9:15am-5:45pm EST</span><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">).</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">&nbsp;</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">Thank you for choosing BLU!</span></p>
+
+						<p class="MsoNormal"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+						<p class="MsoNormal"><b><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)">Best Regards,</span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:9pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(153,204,0)"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.bluproducts.com&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=Sx-TW7qBTOXH0KoNJ88koYFKnlmOnXYqS01UxprT0u8&e=" shape="rect" target="_blank">www.bluproducts.com</a></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(38,38,38)">BLU Products Social </span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)">Facebook </span></b><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(0,176,240)">|</span></b><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)"> <a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.facebook.com_Blu.Products&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=gat2T1LjXh7EEdiJGGhZcHSwx32dWn6UYg9kdE5AeW4&e=" shape="rect" target="_blank">www.facebook.com/Blu.Products</a></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)">Twitter </span></b><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(0,176,240)">| </span></b><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.twitter.com_BLU-5FProducts&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=Z_Vd2T4VBTm7vynD2P_dPIl50Yha9JJSV-I4jhiZgks&e=" shape="rect" target="_blank">www.twitter.com/BLU_Products</a></span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)">YouTube </span></b><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(0,176,240)">|</span></b><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)"> <a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.youtube.com_&d=DwQFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=Xx3iUugYQQ5XYA3TqNeNuXsaPDh4Z9K0uIL5zGLgwRw&m=uL2uxKNOdMISw4YUlnwKtkVQh03WVJhnXvzGtlijw5H_0YWBkZby7qI_HtzhgMVC&s=6e9YPekG1rRFNfuaBvKMD0hBW_td6rS-Jwf4ZmzNC7w&e=" shape="rect" target="_blank">www.youtube.com/</a></span><span style="font-size:11pt;color:blue;font-weight:normal"> </span><span style="color:blue">BLUProductsGlobal</span></b></p>
+
+						<p class="MsoNormal"><b><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)">Instagram</span><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(0,176,240)"> |</span><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(51,51,51)"> </span><u><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:blue">@BLU_Products</span></u></b></p>
+
+						<p class="MsoNormal"><b><u><span style="font-size:10pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;color:blue"><img align="left" alt="" border="0" src="https://c.na3.content.force.com/servlet/servlet.ImageServer?id=01550000001LNHu&oid=00D50000000BSXg" /></span></u></b></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);height:1px;line-height:1px">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);vertical-align:top;text-align:left">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="1" rowspan="1" style="background-color:rgb(255,255,255);height:1px;line-height:1px">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+</div>
+<img src="https://bluproducts.my.salesforce.com/servlet/servlet.ImageServer?oid=00D50000000BSXg&esid=018Hs00001o3TqX&from=int" /></div>
+</blockquote>
+</div>
+</div>
+
+<p>&nbsp;</p>
+
+<hr />
+<p>This email has been scanned for spam and viruses by Proofpoint Essentials. Click <a href="https://us3.proofpointessentials.com/index01.php?mod_id=11&mod_option=logitem&report=1&type=easyspam&k=k1&payload=53616c7465645f5fa11ab49a8a059161e26e2f56f72835bd36572003223ac4f48e2bc285f76013584c9fff03e873df12582ad34c3890958e6788d392d7fc199f0e1772ce7b72556ffc5a592b9b50d156a8648c9f25416a98a201a84d34c69580fa90a7d123033afea97548fd0f203f09fda6431fce40738fbed5cb18a5eab077262cae1f543dd8b80dabce2eff2673d2263d64db2ab579b90197b6bc2b259606&mail_id=1694622285-L-iVQZaylOEj&r_address=service%40bluproducts.com" shape="rect" target="_blank">here</a> to report this email as spam.</p>
+<img src="https://bluproducts.my.salesforce.com/servlet/servlet.ImageServer?oid=00D50000000BSXg&esid=018Hs00001o3WLs&from=int" /></div>
+</blockquote>
+</div>
+
+<p>&nbsp;</p>
+
+<hr />
+<p>This email has been scanned for spam and viruses by Proofpoint Essentials. Click <a href="https://us3.proofpointessentials.com/index01.php?mod_id=11&mod_option=logitem&report=1&type=easyspam&k=k1&payload=53616c7465645f5fd0b4e1969003328270e5d97212a2fef78fb4a511b9185cf2d25ddaa63dd5b53619ef50142d94fd9a5ea8ba841f25677ee5e1404ad4c1788bc2d3ab63ff2c60631d292e18251dd93231ffa97713f399449568d5df8c2082eef91db6972bbac780e584f86bb696d1a06825eb604e1637df456385de72d07d6eac7487517e0a7ea8a47da83fa84a831784ed404c7f306286ecd60e2ee3308afe&mail_id=1695056942-ig4KWM_d1Hq7&r_address=service%40bluproducts.com" shape="rect" target="_blank">here</a> to report this email as spam.</p>
+<img src="https://bluproducts.my.salesforce.com/servlet/servlet.ImageServer?oid=00D50000000BSXg&esid=018Hs00001o3cOc&from=ext"></body>
+</html>
+------=_Part_1495_696519388.1695131327010--

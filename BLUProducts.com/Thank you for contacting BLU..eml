@@ -1,0 +1,352 @@
+MIME-Version: 1.0
+Date: Fri, 23 Feb 2024 12:41:45 -0500
+References: <CAFSb1tyeS49Z3nT75FFDu1pMxdQ8WQno7g=YyEOFgnYwUKX6WA@mail.gmail.com>
+	<HkufW000000000000000000000000000000000000000000000S9BFY600ZCOcyTc_SRCHVsWELe-2Qg@sfdc.net>
+In-Reply-To: <HkufW000000000000000000000000000000000000000000000S9BFY600ZCOcyTc_SRCHVsWELe-2Qg@sfdc.net>
+Message-ID: <CAFSb1tzhx3vNHgAicNbUKYdvTtRemBgAF6-qZiBRfvDktvfs9w@mail.gmail.com>
+Subject: Re: Thank you for contacting BLU Products!
+From: Unofficial GNU GPL Legal Team <unofficial.gnu.gpl.legal.team@gmail.com>
+To: "Customer Service Service@BLUproducts.com" <service@bluproducts.com>
+Content-Type: multipart/alternative; boundary="000000000000ea0367061210123c"
+
+--000000000000ea0367061210123c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+
+Please re-read our original email fully! You still have not changed the
+"C5L 2020" folder since 2022, and the FTP has not been updated since 2023
+of October as of Feb 23, 2024. The source was not uploaded properly, the
+wrong folder was uploaded to the FTP.
+
+We hope you have a good day,
+Unofficial GNU GPL Legal Team! <unofficial.gnu.gpl.legal.team@gmail.com>
+
+On Fri, Feb 23, 2024 at 10:49=E2=80=AFAM Customer Service Service@BLUproduc=
+ts.com <
+service@bluproducts.com> wrote:
+
+>
+>
+> Hello,
+>
+> Thank you for contacting BLU Products <http://bluproducts.com/>. We are
+> happy to help you!
+>
+>
+>
+> Please follow the instructions enclosed to the PDF file attached for
+> Kernel Source Codes.
+>
+>
+>
+> Should you have any additional questions please contact us, via E-Mail or
+> 1-877-602-8762 (Monday-Friday 9:15 AM - 5:45 PM EST).
+>
+>
+>
+> Thank you for choosing BLU!
+>
+> *Best Regards,*
+>
+> *www.bluproducts.com* <http://www.bluproducts.com/>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> --------------- Original Message ---------------
+> *From:* Unofficial GNU GPL Legal Team [
+> unofficial.gnu.gpl.legal.team@gmail.com]
+> *Sent:* 2/22/2024 7:19 PM
+> *To:* sales@bluproducts.com; media@bluproducts.com;
+> service@bluproducts.com
+> *Subject:* !ALERT! Possible Legal issue with one or more of your devices!
+>
+> Hello,
+>
+> Someone has reported to us that one of your devices doesn't have properly
+> released GPL source code available to them. The device the user is asking
+> about is the BLU C5L 2020, specifically the FWVGA variant (Not the HD
+> variant) C0070WW. We have identified and confirmed the following missing
+> required sources for this device, as per the devices original out of box
+> firmware that has since been backed up:
+>
+> "U-Boot 2015.07 (Dec 03 2020 - 17:45:49 +0800)sharklE" - Taken from
+> "uboot" & "uboot_bak" Partitions
+> "Linux version 4.14.133 (ycchun@ycchun) (gcc version 4.9.x 20150123
+> (prerelease) (GCC)) #1 SMP PREEMPT Thu Dec 3 17:47:51 CST 2020" - Taken
+> from "boot" & "recovery" Partitions (Including it kernel modules or objec=
+ts
+> ".KO"s from "socko" & "odmko" Partitions)
+>
+> This is a "so far" research, there could possibly be more, such as
+> toolchains (GCC/Clang) if modified, though we are unsure about toolchains
+> used at the moment, and if the toolchains were modified and compiled to
+> compile above projects. The firmware version of the dump is, as said
+> earlier in this email, the shipped not updated firmware, build number
+> "BLU_C0070WW_V10.0.G.03.01_GENERIC_FW_03122020". We are also aware of you=
+r
+> FTP server, which while contains a "C5L 2020" folder, isn't GPL licensed,=
+ a
+> folder named kernel, and is Apache licensed, and therefore wrong and
+> incomplete. The user has asked a few times to reupload it since 2021, up
+> until today, they emailed us. It has also been noted the FTP is incomplet=
+e
+> of devices source code. We are questioning about the partition named
+> "UDC_config" and what its license is, since it's connected to the Linux
+> Kernel, and U-Boot.
+>
+> Please reply back to us at <unofficial.gnu.gpl.legal.team@gmail.com> with
+> the Downloads necessary to the source code listed above. If you refuse to
+> reply back to us at all by February 29th, 2024, we will contact the user
+> that filed to us and the GNU team, and if you don't give us the compile
+> files asked above, by March 7th, 2024, we will contact the user that file=
+d
+> to us and the GNU team. Please note: We are not asking for binaries to RO=
+Ms
+> or firmware in any way, we are asking about required sources to those
+> binaries built and distributed. Also please note, this may be needed for
+> any changes in OTA updates, if any changes are made.
+>
+> We hope you have a good day,
+> Unofficial GNU GPL Legal Team! <unofficial.gnu.gpl.legal.team@gmail.com>
+>
+>
+>
+>
+> ------------------------------
+>
+> This email has been scanned for spam and viruses by Proofpoint Essentials=
+.
+> Click here
+> <https://us3.proofpointessentials.com/app/report_spam.php?mod_id=3D11&mod=
+_option=3Dlogitem&report=3D1&type=3Deasyspam&k=3Dk1&payload=3D53616c7465645=
+f5f08872f6d3969f3aa4c3e2096355d7291cf8560cbc8f21f27d715286c97263636b2d5653a=
+b4318d697db93a2e2fd682775e3493dd5a5f43981efb5318508bdac24873df8932de66a8f80=
+f9243deef20a9a6fe392bc48573b54e261762d5e220bf77cf9e6049bb8b0450b500803cfc8e=
+3e41f35689edeb407c6a890eeffb52cf266c9477a2547e73e8f29bfe30a2db4317ef8872926=
+f3e7114>
+> to report this email as spam.
+>
+
+--000000000000ea0367061210123c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hello,<br><br></div>Please re-read our original email=
+ fully! You still have not changed the &quot;C5L 2020&quot; folder since 20=
+22, and the FTP has not been updated since 2023 of October as of Feb 23, 20=
+24. The source was not uploaded properly, the wrong folder was uploaded to =
+the FTP. <br><br>We hope you have a good day,<br>Unofficial GNU GPL Legal T=
+eam! &lt;<a href=3D"mailto:unofficial.gnu.gpl.legal.team@gmail.com" target=
+=3D"_blank">unofficial.gnu.gpl.legal.team@gmail.com</a>&gt;</div><br><div c=
+lass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Fri, Feb 23, =
+2024 at 10:49=E2=80=AFAM Customer Service Service@BLUproducts.com &lt;<a hr=
+ef=3D"mailto:service@bluproducts.com" target=3D"_blank">service@bluproducts=
+.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"mar=
+gin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1=
+ex">
+
+=09
+
+<div>
+
+<div style=3D"background-color:rgb(255,255,255)">
+<center>
+<table id=3D"m_-7964548100535376246m_-8691248436975241245m_-331069468438831=
+9277topTable" width=3D"500" height=3D"450" cellspacing=3D"0" cellpadding=3D=
+"0">
+	<tbody>
+		<tr valign=3D"top">
+			<td style=3D"background-color:rgb(255,255,255);vertical-align:middle;tex=
+t-align:center"><img id=3D"m_-7964548100535376246m_-8691248436975241245m_-3=
+310694684388319277r1sp1" src=3D"https://bluproducts.my.salesforce.com/servl=
+et/servlet.ImageServer?id=3D0151T0000040Gr7&amp;oid=3D00D50000000BSXg" bord=
+er=3D"0"></td>
+		</tr>
+		<tr style=3D"display:none" valign=3D"top">
+			<td style=3D"background-color:rgb(255,255,255);height:0px;line-height:0p=
+x">=C2=A0</td>
+		</tr>
+		<tr valign=3D"top">
+			<td style=3D"background-color:rgb(255,255,255);color:rgb(0,0,0);font-siz=
+e:12pt;font-family:arial" height=3D"300">
+			<table width=3D"550" height=3D"400" cellspacing=3D"5" cellpadding=3D"5" =
+border=3D"0">
+				<tbody>
+					<tr valign=3D"top" height=3D"400">
+						<td style=3D"background-color:rgb(255,255,255);color:rgb(0,0,0);font-=
+size:12pt;font-family:arial">
+						<p class=3D"MsoNormal"><a name=3D"m_-7964548100535376246_m_-869124843=
+6975241245_m_-3310694684388319277__MailAutoSig"><span style=3D"font-family:=
+&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">Hello,<u></u><u=
+></u></span></a></p>
+
+						<p class=3D"MsoNormal"><a name=3D"m_-7964548100535376246_m_-869124843=
+6975241245_m_-3310694684388319277__MailAutoSig"></a></p>
+
+						<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;=
+,&quot;serif&quot;;color:rgb(31,73,125)">Thank you for contacting </span><a=
+ href=3D"http://bluproducts.com/" target=3D"_blank"><span style=3D"color:bl=
+ue">BLU Products</span></a><span style=3D"font-family:&quot;Cambria&quot;,&=
+quot;serif&quot;;color:rgb(31,73,125)">. We are happy to help you!<u></u><u=
+></u></span></p>
+
+						<p class=3D"MsoNormal">=C2=A0</p>
+
+						<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;=
+,&quot;serif&quot;;color:rgb(31,73,125)">Please follow the instructions enc=
+losed to the PDF file attached for Kernel Source Codes.=C2=A0</span></p>
+
+						<p class=3D"MsoNormal">=C2=A0</p>
+
+						<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;=
+,&quot;serif&quot;;color:rgb(31,73,125)">Should you have any additional que=
+stions please contact us, via E-Mail or 1-877-602-8762 (</span><span style=
+=3D"color:rgb(31,73,125);font-family:Cambria,serif;background-color:rgb(255=
+,255,255)">Monday-Friday 9:15 AM - 5:45 PM EST</span><span style=3D"font-fa=
+mily:&quot;Cambria&quot;,&quot;serif&quot;;color:rgb(31,73,125)">).<u></u><=
+u></u></span></p>
+
+						<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;=
+,&quot;serif&quot;;color:rgb(31,73,125)">=C2=A0</span></p>
+
+						<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;=
+,&quot;serif&quot;;color:rgb(31,73,125)">Thank you for choosing BLU!<u></u>=
+<u></u></span></p>
+
+						<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Cambria&qu=
+ot;,&quot;serif&quot;;color:rgb(51,51,51)">Best Regards,<u></u><u></u></spa=
+n></b></p>
+
+						<p class=3D"MsoNormal"><a href=3D"http://www.bluproducts.com/" target=
+=3D"_blank"><b><span style=3D"font-size:9pt;font-family:&quot;Cambria&quot;=
+,&quot;serif&quot;;color:blue">www.bluproducts.com</span></b></a><b><span s=
+tyle=3D"font-size:9pt;font-family:&quot;Cambria&quot;,&quot;serif&quot;;col=
+or:rgb(153,204,0)"><u></u><u></u></span></b></p>
+
+						<p class=3D"MsoNormal">=C2=A0</p>
+
+						<p class=3D"MsoNormal"><img alt=3D"" src=3D"https://c.na3.content.for=
+ce.com/servlet/servlet.ImageServer?id=3D015500000020eNg&amp;oid=3D00D500000=
+00BSXg" border=3D"0" align=3D"left"></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr valign=3D"top">
+			<td style=3D"background-color:rgb(255,255,255);height:1px;line-height:1p=
+x">=C2=A0</td>
+		</tr>
+		<tr valign=3D"top">
+			<td style=3D"background-color:rgb(255,255,255);vertical-align:top;text-a=
+lign:left">=C2=A0</td>
+		</tr>
+		<tr valign=3D"top">
+			<td style=3D"background-color:rgb(255,255,255);height:1px;line-height:1p=
+x">=C2=A0</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+</div>
+<br clear=3D"none">
+<br clear=3D"none">
+<br clear=3D"none">
+--------------- Original Message ---------------<br clear=3D"none">
+<b>From:</b> Unofficial GNU GPL Legal Team [<a href=3D"mailto:unofficial.gn=
+u.gpl.legal.team@gmail.com" target=3D"_blank">unofficial.gnu.gpl.legal.team=
+@gmail.com</a>]<br clear=3D"none">
+<b>Sent:</b> 2/22/2024 7:19 PM<br clear=3D"none">
+<b>To:</b> <a href=3D"mailto:sales@bluproducts.com" target=3D"_blank">sales=
+@bluproducts.com</a>; <a href=3D"mailto:media@bluproducts.com" target=3D"_b=
+lank">media@bluproducts.com</a>; <a href=3D"mailto:service@bluproducts.com"=
+ target=3D"_blank">service@bluproducts.com</a><br clear=3D"none">
+<b>Subject:</b> !ALERT! Possible Legal issue with one or more of your devic=
+es!<br clear=3D"none">
+=C2=A0
+<div dir=3D"ltr">
+<div>Hello,</div>
+
+<div>=C2=A0</div>
+
+<div>Someone has reported to us that one of your devices doesn&#39;t have p=
+roperly released GPL source code available to them. The device the user is =
+asking about is the BLU C5L 2020, specifically the FWVGA variant (Not the H=
+D variant) C0070WW. We have identified and confirmed the following missing =
+required sources for this device, as per the devices original out of box fi=
+rmware that has since been backed up:</div>
+
+<div>=C2=A0</div>
+
+<div>&quot;U-Boot 2015.07 (Dec 03 2020 - 17:45:49 +0800)sharklE&quot; - Tak=
+en from &quot;uboot&quot; &amp; &quot;uboot_bak&quot; Partitions<br clear=
+=3D"none">
+&quot;Linux version 4.14.133 (ycchun@ycchun) (gcc version 4.9.x 20150123 (p=
+rerelease) (GCC)) #1 SMP PREEMPT Thu Dec 3 17:47:51 CST 2020&quot; - Taken =
+from &quot;boot&quot; &amp; &quot;recovery&quot; Partitions (Including it k=
+ernel modules or objects &quot;.KO&quot;s from &quot;socko&quot; &amp; &quo=
+t;odmko&quot; Partitions)<br clear=3D"none">
+=C2=A0</div>
+
+<div>This is a &quot;so far&quot; research, there could possibly be more, s=
+uch as toolchains (GCC/Clang) if modified, though we are unsure about toolc=
+hains used at the moment, and if the toolchains were modified and compiled =
+to compile above projects. The firmware version of the dump is, as said ear=
+lier in this email, the shipped not updated firmware, build number &quot;BL=
+U_C0070WW_V10.0.G.03.01_GENERIC_FW_03122020&quot;. We are also aware of you=
+r FTP server, which while contains a &quot;C5L 2020&quot; folder, isn&#39;t=
+ GPL licensed, a folder named kernel, and is Apache licensed, and therefore=
+ wrong and incomplete. The user has asked a few times to reupload it since =
+2021, up until today, they emailed us. It has also been noted the FTP is in=
+complete of devices source code. We are questioning about the partition nam=
+ed &quot;UDC_config&quot; and what its license is, since it&#39;s connected=
+ to the Linux Kernel, and U-Boot.<br clear=3D"none">
+=C2=A0</div>
+
+<div>Please reply back to us at &lt;<a href=3D"mailto:unofficial.gnu.gpl.le=
+gal.team@gmail.com" shape=3D"rect" target=3D"_blank">unofficial.gnu.gpl.leg=
+al.team@gmail.com</a>&gt; with the Downloads necessary to the source code l=
+isted above. If you refuse to reply back to us at all by February 29th, 202=
+4, we will contact the user that filed to us and the GNU team, and if you d=
+on&#39;t give us the compile files asked above, by March 7th, 2024, we will=
+ contact the user that filed to us and the GNU team. Please note: We are no=
+t asking for binaries to ROMs or firmware in any way, we are asking about r=
+equired sources to those binaries built and distributed. Also please note, =
+this may be needed for any changes in OTA updates, if any changes are made.=
+<br clear=3D"none">
+=C2=A0</div>
+
+<div>We hope you have a good day,<br clear=3D"none">
+Unofficial GNU GPL Legal Team! &lt;<a href=3D"mailto:unofficial.gnu.gpl.leg=
+al.team@gmail.com" shape=3D"rect" target=3D"_blank">unofficial.gnu.gpl.lega=
+l.team@gmail.com</a>&gt;<br clear=3D"none">
+=C2=A0</div>
+</div>
+=C2=A0
+
+<p>=C2=A0</p>
+
+<hr>
+<p>This email has been scanned for spam and viruses by Proofpoint Essential=
+s. Click <a href=3D"https://us3.proofpointessentials.com/app/report_spam.ph=
+p?mod_id=3D11&amp;mod_option=3Dlogitem&amp;report=3D1&amp;type=3Deasyspam&a=
+mp;k=3Dk1&amp;payload=3D53616c7465645f5f08872f6d3969f3aa4c3e2096355d7291cf8=
+560cbc8f21f27d715286c97263636b2d5653ab4318d697db93a2e2fd682775e3493dd5a5f43=
+981efb5318508bdac24873df8932de66a8f80f9243deef20a9a6fe392bc48573b54e261762d=
+5e220bf77cf9e6049bb8b0450b500803cfc8e3e41f35689edeb407c6a890eeffb52cf266c94=
+77a2547e73e8f29bfe30a2db4317ef8872926f3e7114" shape=3D"rect" target=3D"_bla=
+nk">here</a> to report this email as spam.</p>
+<img src=3D"https://bluproducts.my.salesforce.com/servlet/servlet.ImageServ=
+er?oid=3D00D50000000BSXg&amp;esid=3D018Qn000004Qy3A&amp;from=3Dext"></div>
+</blockquote></div>
+
+--000000000000ea0367061210123c--
